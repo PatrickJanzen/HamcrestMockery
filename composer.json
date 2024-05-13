@@ -1,0 +1,36 @@
+{
+  "name": "patrickjanzen/hamcrestmockery",
+  "type": "library",
+  "autoload": {
+    "psr-4": {
+      "HamcrestMockery\\": "src"
+    },
+    "files": [
+      "src\\helpers.php"
+    ]
+  },
+  "autoload-dev": {
+    "psr-4": {
+      "HamcrestMockeryTest\\": "tests"
+    }
+  },
+  "require": {
+    "php": ">=7.4",
+    "mockery/mockery": "^1.6",
+    "hamcrest/hamcrest-php": "^2.0"
+  },
+  "require-dev": {
+    "infection/infection": "^0.26",
+    "phpunit/phpunit": "^9.6"
+  },
+  "config": {
+    "allow-plugins": {
+      "infection/extension-installer": true
+    }
+  },
+  "scripts": {
+    "test": "phpunit -c phpunit.xml.dist --coverage-html=.qa/coverage",
+    "coverage": "@test --coverage-html=.qa/coverage",
+    "infection": "infection -n"
+  }
+}
